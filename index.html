@@ -19,12 +19,33 @@
     alert("현재 대기 시간이 길어지고 있습니다. 잠시만 기다려 주세요.");
     alert("NEIS 반배정 확인 서비스에 정상 접속하기 위해 사용자 클라이언트를 검증합니다.");
     alert("접속이 완료되었습니다. 학교와 학년, 이름을 안내에 맞춰 입력해 주세요.");
-    var school=prompt("학교를 입력해 주세요. (정식 명칭으로 입력하지 않으면 오류가 발생할 수 있습니다.)");
-    var grade=prompt("올라가는 학년(2023년도)을 입력해 주세요.");
-    var name=prompt("이름을 입력해 주세요.");
+    var school="ㅇㅇ";
+    while(!school.includes("학교")){
+        school=prompt("학교를 입력해 주세요. (정식 명칭으로 입력하지 않으면 오류가 발생할 수 있습니다.)");
+        if(!school.includes("학교")){
+            alert("학교를 정확히 입력해 주세요.");
+        }
+    }
+    var grade="null";
+    regex = /[0-9]/;
+    while(!regex.test(grade)){
+        grade=prompt("올라가는 학년(2023년도)을 입력해 주세요.");
+        console.log(grade);
+        if(!regex.test(grade)){
+            alert("학년을 정확히 입력해 주세요.");
+        }
+    }
+    var name="ㅇ";
+    regex2 = /^[가-힣]{2,4}$/;
+    while(!regex2.test(name)){
+        name=prompt("이름을 입력해 주세요.");
+        if(!regex2.test(name)){
+            alert("검증에 실패했습니다. 이름을 정확히 입력해 주세요.");
+        }
+    }
     alert("2023학년도에 "+school+" "+grade+"학년으로 진급하는 "+name+"님으로 확인되었습니다. (본인 외에는 조회가 불가능합니다.)");
     alert(name+"님, 잠시만 기다려 주세요. 조회 중입니다.");
-    alert("2023학년도 "+grade+"학년 진급생 "+name+"님, 현재 편성된 반은 1반 입니다. 이 툴을 널리 공유해 주세요!");
+    alert("2023학년도 "+String(grade)+"학년 진급생 "+name+"님, 현재 편성된 반은 1반 입니다. 이 툴을 널리 공유해 주세요!");
     alert("설마 저거 믿는거임?? ㅋㅋㅋㅋㅋ");
     alert("ㅋㅋㅋㅋㅋㅋㅋㅋㅋ 아 ㅋㅋㅋㅋㅋ");
     alert("이거 끝까지 하면 진짜 나옴");
